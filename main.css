@@ -33,8 +33,11 @@ body{
     top: calc(var(--size)/2);
     left: calc(var(--size)/2);
     opacity: var(--opacity);
-    /*-webkit-app-region: drag;*/
     z-index: -1;
+}
+
+.draggable{
+    -webkit-app-region: drag;
 }
 
 /* animation style*/
@@ -93,13 +96,15 @@ input{
     position: absolute;
     padding: 1px;
     display: grid;
-    grid-template-rows: auto auto auto auto;
-    grid-row-gap: 5px;
+    grid-template-rows: auto auto auto auto auto auto auto;
+    grid-row-gap: 1px;
     justify-self: center;
     height: 150px;
     /*-webkit-app-region: drag;*/
 }
-
+span{
+    color: white;
+}
 
 .colorContainer,.timing{
     display: grid;

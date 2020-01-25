@@ -70,3 +70,30 @@ export function promisify(fn) {
             fn(...params.concat([(err, ...args) => err ? reject(err) : resolve( args.length < 2 ? args[0] : args )])))
     }
 }
+
+/**
+ * @return {boolean}
+ */
+function IsJsonString(str) {
+    try {
+        JSON.parse(str)
+    } catch (e) {
+        return false
+    }
+    return true
+}
+
+export function setToLocalStorage(key,value) {
+    if (typeof value === 'object') localStorage.setItem(key, JSON.stringify(value))
+    else localStorage.setItem(key, value)
+}
+
+export function getFromLocalStorage(key) {
+    let value = localStorage.getItem(key)
+    if (IsJsonString(value)) return JSON.parse(value)
+    return value
+}
+
+export function removeFromLocalStorage(key) {
+    localStorage.removeItem(key)
+}
