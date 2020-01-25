@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Breathing</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+
+<div id="edit_overlay">
+    <input id ="opacity" class="form-field" type="range" min="0.0" max="1.0" value="0.6" step="0.1">
+  <div class="colorContainer">
+      <input id="startColor" class="form-field" type="color" value="#BB32BF">
+      <input id="middleColor" class="form-field" type="color" value="#BF1E2C">
+      <input id="endColor" class="form-field" type="color" value="#382DBF">
+  </div>
+  <div class="timing">
+      <input id="inhaleTime" class="form-field" type="text" value="3">
+      <input id="pauseTime" class="form-field" type="text" value="0">
+      <input id="exhaleTime" class="form-field" type="text" value="4">
+  </div>
+  <button id="save">Save</button>
+</div>
+<div class="circle play-inhale"></div>
+<script src="./renderer.js" type="module"></script>
+</body>
+</html>
